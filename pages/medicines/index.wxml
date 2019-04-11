@@ -1,0 +1,46 @@
+<view class="warning-box" wx:if="{{isWraning}}">
+  <text class="wraning-text-blue">以下药物暂无风险提示，请结合实际情况选用。</text>
+  <text class="iconfont icon-close" bindtap="handleCloseWraning"></text>
+</view>
+<view class="wraning-kong-box" wx:if="{{isWraning}}"></view>
+<view class="container">
+  <view
+    class="medicines-main"
+    wx:for="{{medicateList}}"
+    wx:key="{{index}}">
+    <view class="medicines-title-box">
+      <view class="medicines-title">{{item.categoryName}}</view>
+      <text
+        class="iconfont icon-what"
+        bindtap="handleMedicineDialog"
+        data-prefix="{{item.explainPrefix}}"
+        data-suffix="{{item.explainSuffix}}"
+        data-content = "{{item.explainContent}}"
+      ></text>
+    </view>
+    <view class="medicines-card">
+      <view
+        class="medicines-card-item"
+        wx:for="{{item.medicineList}}"
+        wx:for-item="medicine"
+        wx:key="{{index}}"
+        bindtap="handleOpenDrugList"
+        data-id="{{medicine.productId}}">
+        <image
+          class="card-item-img"
+          src="{{medicine.imgUrl}}" />
+        <view class="card-item-text">{{medicine.medicineName}}</view>
+      </view>
+    </view>
+  </view>
+  <dialog id="modal"
+    title=""
+    cancelText="确认"
+    bind:cancelEvent="_cancelEvent">
+    <view class='modal-body'>
+      <text>{{explainPrefix}}</text>
+      <text class="medicine-content">{{explainContent}}</text>
+      <text>{{explainSuffix}}</text>
+    </view>
+  </dialog>
+</view>

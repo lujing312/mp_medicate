@@ -1,0 +1,39 @@
+<view class="container">
+  <image
+    class="first-bg-img"
+    src="https://static.genebox.cn/mp/medicine/home_background.png"/>
+  <view class="home-search" bindtap="handleOpenSearch">
+    <text class="iconfont icon-search"></text>
+    <text class="home-input">搜索药物</text>
+  </view>
+  <view class="home-main">
+    <view class="scan-button" bindtap="handleScanCode" wx:if="{{!isShow}}">
+      <text class="iconfont icon-scan"></text>
+      <view class="scan-text">开始扫药</view>
+    </view>
+    <button class="false-scan-button" open-type="getUserInfo" bindgetuserinfo="handleScanCodeLogin" wx:if="{{isShow}}">
+        <text class="iconfont icon-scan"></text>
+        <view class="false-scan-text">开始扫药</view>
+    </button>
+    <view class="icon-box" wx:if="{{isLogin&&boxNumer}}">
+      <view class="list-img-box" bindtap="handleOpenGuide">
+        <text class="iconfont icon-user"></text>
+        <text class="icon-box-title">药物清单</text>
+      </view>
+      <view class="user-img-box" bindtap="handleOpenSelect">
+        <text class="iconfont icon-change"></text>
+         <text class="icon-box-title">切换唾液盒</text>
+      </view>
+    </view>
+  </view>
+  <button
+    class="login-button"
+    open-type="getUserInfo"
+    bindgetuserinfo="handleUserBox"
+    wx:if="{{!isLogin}}">立即登录</button>
+    <view class="kong-button" wx:if="{{iPhoneX&&isLogin}}"></view>
+    <view class="empty-placeholder" wx:if="{{iPhoneX&&!isLogin}}"></view>
+</view>
+
+
+  

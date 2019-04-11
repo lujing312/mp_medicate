@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "精准健康",
+  "usingComponents": {
+    "dialog": "/components/dialog"
+  }
+}

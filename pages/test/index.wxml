@@ -1,0 +1,77 @@
+<!--pages/test/index.wxml-->
+<view class="warning-box" wx:if="{{isWraning}}">
+  <text class="iconfont icon-wraning"></text>
+  <text class="wraning-text">红色提示为需关注药物，<text class="wraning-text-blue">蓝色为暂无风险药物。</text></text>
+  <text class="iconfont icon-close" bindtap="handleCloseWraning"></text>
+</view>
+<view class="wraning-kong-box"  wx:if="{{isWraning}}"></view>
+<view class="test-detail">
+  <view
+    class="test-detail-card"
+    id="affix"
+    wx:for="{{catogoryList}}"
+    wx:key="{{index}}">
+    <view
+      class="test-detail-title"
+      bindtap="handleTestClose"
+      data-index="{{index}}">
+      <view class="detail-title-left">{{item.categoryName}}</view>
+      <view class="detail-title-right">
+        <view class="detail-text-right">
+          <view class="detail-title-text">共{{item.ingredientNum}}项检测</view>
+          <view class="cover-text">覆盖药物{{item.cnNameCount}}种</view>
+        </view>
+        <image
+          class="detail-title-img"
+          wx:if="{{item.isHidden}}"
+          src="https://static.genebox.cn/mp/medicine/bot.png"/>
+        <image
+          class="detail-title-img"
+          wx:if="{{!item.isHidden}}"
+          src="https://static.genebox.cn/mp/medicine/top.png"/>
+      </view>
+    </view>
+    <view
+      class="test-detail-one"
+      wx:if="{{item.isHidden}}">
+      <view class="test-detail-main"
+        bindtap="handleOpenDrugView"
+        data-id="{{ingredient.ingredientId}}"
+        wx:for="{{item.ingredientList}}"
+        wx:key="{{index}}"
+        wx:for-item="ingredient">
+        <view class="detail-main-left">
+          <view class="detail-main-top">{{ingredient.ingredientName}}</view>
+          <view wx-if="{{ingredient.riskType == 1}}" class="detail-main-center-two">酌情调整剂量</view>
+          <view wx-if="{{ingredient.riskType == 0}}" class="detail-main-center">正常使用</view>
+          <view class="detail-main-bot">
+            <view
+              class="main-bot-item"
+              wx:for="{{ingredient.medicineNameList}}"
+              wx:key="{{index}}"
+              wx:for-item="tag">{{tag}}</view>
+          </view>
+        </view>
+        <text class="iconfont icon-big"></text>
+      </view>
+      <view
+        class="test-detail-bottom"
+        bindtap="handleTestClose"
+        data-index="{{index}}">
+        <text class="iconfont icon-retract"></text>
+        <view class="detail-bottom-text">收起</view>
+      </view>
+    </view>
+    <view
+      class="test-detail-two"
+      wx:if="{{!item.isHidden}}"
+      bindtap="handleTestClose"
+      data-index="{{index}}">
+      <view
+        class="{{medicine.riskType==1?'test-detail-sub':'test-detail-blue'}}"
+        wx:for="{{item.medicineList}}"
+        wx:key="{{index}}"
+        wx:for-item="medicine">{{medicine.medicineName}}</view>
+    </view>
+  </view>
+</view>

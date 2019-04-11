@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "常备用药",
+  "usingComponents": {
+    "dialog": "/components/dialog"
+  }
+}

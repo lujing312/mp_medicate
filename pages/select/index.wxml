@@ -1,0 +1,23 @@
+<!--pages/select/index.wxml-->
+<view class="container">
+  <view
+    class="select-list-card"
+    wx:for="{{selectList}}"
+    wx:key="index"
+    data-index="{{index}}"
+    bindtap="hanldeChangeChecked"
+    data-num="{{item.boxNumber}}">
+    <view class="card-left">
+      <view class="card-title">{{item.nickName}}</view>
+      <view class="card-boxnum">{{item.boxNumber}}</view>
+    </view>
+    <view class="card-right">
+      <text class="iconfont icon-radio" wx:if="{{item.isChecked}}"></text>
+      <text class="iconfont icon-unradio" wx:if="{{!item.isChecked}}"></text>
+    </view>
+  </view>
+  <button bindtap="handleSubmit" class="common-btn">
+    <text>确定</text>
+  </button>
+</view>
+  

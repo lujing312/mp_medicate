@@ -1,0 +1,81 @@
+<view class="container">
+    <view class="home-read-guide" bindtap="hanldeGuideUrl">
+      <view class="resd-guide-left">阅读指南</view>
+      <text class="iconfont icon-big"></text>
+    </view>
+  <view class="main">
+    <view
+      class="home-drug-view"
+      data-type="native"
+      catchtap="hanldeOpenTest">
+      <view class="drug-view-title">
+        <view class="drug-view-right">
+          <image
+            class="drug-view-logo"
+            src="https://static.genebox.cn/mp/medicine/write.png"/>
+          <view class="drug-view-text">药物检测概览</view>
+        </view>
+        <text
+          class="iconfont icon-what"
+          wx:if="{{healthInfo.medicineIndex.content}}"
+          catchtap="handleDrugDialog"/>
+      </view>
+      <view class="drug-view-main">
+        <view class="view-main-cover">
+          <view >已覆盖:</view>
+          <view class="main-cover-item"><text class="cover-blue">{{healthInfo.medicineIndex.categoryNum}}</text>种药物</view>
+          <view><text class="cover-blue">{{healthInfo.medicineIndex.medicineNum}}</text>种商品</view>
+        </view>
+        <view class="view-main-cover">
+          <view >需关注:</view>
+          <view class="main-cover-item"><text class="cover-pink">{{healthInfo.medicineIndex.riskCategoryNum }}</text>种药物</view>
+          <view><text class="cover-pink">{{healthInfo.medicineIndex.riskMedicineNum}}</text>种商品</view>
+        </view>
+        <view class="medicine-content">
+          <view class="medicine-item" wx:for="{{healthInfo.medicineIndex.riskMedicineList}}" wx:key="{{index}}" wx:for-item="riskItem">{{riskItem}}</view>
+        </view>
+        <view class="medicine-content-bot">更多详情 <text class="iconfont icon-big"></text></view>
+      </view>
+    </view>
+    <view
+      class="home-drug-view"
+      data-type="native"
+      bindtap="handleOpenMedicines">
+      <view class="drug-view-title">
+        <view class="drug-view-right">
+          <image class="drug-view-logo" src="https://static.genebox.cn/mp/medicine/drug.png"/>
+          <view class="drug-view-text">家庭常备用药</view>
+        </view>
+        <text
+          class="iconfont icon-what"
+          wx:if="{{healthInfo.usualMedicine.content}}"
+          catchtap="handleUserDialog" />
+      </view>
+      <view class="drug-view-main">
+        <view class="standing-medication-title">结合检测结果，为您推荐以下家庭常备用药：</view>
+        <view class="standing-content">
+          <view class="standing-item"
+          wx:for="{{healthInfo.usualMedicine.medicineList}}"
+          wx:key="{{index}}" wx:for-item="userItem">{{userItem}}</view>
+        </view>
+        <view class="medicine-content-bot">更多详情<text class="iconfont icon-big"></text></view>
+      </view>
+    </view>
+  </view>
+  <dialog id="modal"
+    title="常备用药"
+    cancelText="确认"
+    bind:cancelEvent="_cancelEvent">
+    <view class='modal-body'>
+      <view class="usual-medicine-content">{{healthInfo.usualMedicine.content}}</view> 
+    </view>
+  </dialog>
+  <dialog id="view"
+    title="药物概览"
+    cancelText="确认"
+    bind:cancelEvent="_cancelEvent">
+    <view class='modal-body'>
+      <view class="usual-medicine-content">{{healthInfo.medicineIndex.content}}</view> 
+    </view>
+  </dialog>
+</view>

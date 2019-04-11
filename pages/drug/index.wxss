@@ -1,0 +1,255 @@
+.container {
+  padding: 40rpx 40rpx 200rpx 40rpx;
+}
+.nav-title {
+  font-size: 52rpx;
+  font-weight: 500;
+}
+.text {
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+.drug-classify {
+  display: flex;
+  margin: 40rpx 0;
+}
+.icon-retract {
+  font-size: 24rpx;
+  color:#2296F3;
+  font-weight: 300;
+  margin-right: 10rpx;
+}
+.icon-develop {
+  font-size: 24rpx;
+  color:#2296F3;
+  font-weight: 300;
+  margin-right: 10rpx;
+}
+.classify {
+  padding: 10rpx 20rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+  border-radius: 8rpx;
+}
+.drug-classify-candy {
+  background-color: #90C1FB;
+  margin-right: 30rpx;
+}
+.drug-classify-recipe {
+  background-color: #FD858D;
+}
+.drug-vender {
+  font-size: 36rpx;
+  font-weight: 500;
+}
+.drug-enter-img {
+  width: 40rpx;
+  height: 40rpx;
+}
+.drug-tragacanth {
+  font-size: 32rpx;
+  color:#626262;
+  margin: 40rpx 0;
+}
+.drug-component {
+  font-size: 36rpx;
+  font-weight: 500;
+  margin-bottom: 20rpx;
+}
+.drug-component-box {
+  display: flex;
+  padding: 20rpx 0 20rpx 0;
+  border-bottom: 1rpx solid #DDDDDD;
+  flex-wrap: wrap;
+}
+.component-left {
+  padding: 10rpx 20rpx;
+  background-color: #FD8554;
+  color: #fff;
+  text-align: center;
+  border-radius: 100rpx;
+  font-size: 32rpx;
+  margin: 0rpx 26rpx 16rpx 0rpx;
+}
+.component-left-two {
+  padding: 10rpx 20rpx;
+  border: 2rpx solid #4284C5;
+  color: #4284C5;
+  border-radius:  100rpx;
+  text-align: center;
+  font-size: 28rpx;
+  background-color: #fff;
+  margin: 0rpx 26rpx 16rpx 0rpx;
+}
+.unclick-img {
+  width: 670rpx;
+  height: 240rpx;
+  margin-top: 30rpx;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+}
+.drug-gene-img {
+  width: 670rpx;
+  height: 240rpx;
+  margin-top: 30rpx;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+}
+.drug-gene-main {
+  position: relative;
+}
+.drug-gene-text {
+  position: absolute;
+  z-index: 3;
+  top: 70rpx;
+  left: 40rpx;
+  color: #fff;
+  font-size: 28rpx;
+}
+.drug-gene-bot {
+  width: 550rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 36rpx;
+}
+.drug-text-center {
+  margin: 20rpx 0;
+}
+.drug-title {
+  font-size: 36rpx;
+  font-weight: 500;
+  margin: 40rpx 0;
+}
+.drug-guide-img {
+  width: 56rpx;
+  height: 56rpx;
+  margin-right: 20rpx;
+}
+.drug-guide-main {
+  display: flex;
+  flex-direction: column;
+  font-size: 32rpx;
+  margin-bottom: 40rpx;
+  justify-content: start;
+  align-items: start;
+}
+.drug-guide-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.guide-text-bot {
+  color: #626262;
+  margin-top: 10rpx;
+  padding-left: 76rpx;
+  font-size: 28rpx;
+  line-height: 48rpx;
+}
+.drug-guide-title {
+  font-weight: 500;
+}
+.drug-guide-level {
+  color: #F5A623;
+  display: inline-block;
+  font-size: 30rpx;
+}
+.guide-title {
+  text-align: center;
+}
+.drug-indication-tag {
+  margin-bottom: 20rpx;
+}
+.indication-tag-item {
+  display: inline-block;
+  padding: 10rpx 20rpx;
+  border: 1rpx solid #4284C5;
+  border-radius: 50rpx;
+  margin: 0 12rpx 16rpx 0;
+  font-size: 28rpx;
+  color: #4284C5;
+}
+.drug-indication-text {
+  font-size: 28rpx;
+  line-height: 48rpx;
+  color: #626262;
+  overflow: hidden;
+}
+.drug-indication-word {
+  font-size: 28rpx;
+  line-height: 48rpx;
+  color: #626262;
+  overflow: hidden;
+}
+.drug-indication-img {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 20rpx 0;
+}
+.indication-develop-button {
+  font-size: 26rpx;
+  color: #2296F3;
+}
+.attention-dot-box {
+  display: inline-block;
+  width: 10rpx;
+  height: 10rpx;
+  background-color: #838383;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.drug-attention-title {
+  font-size: 32rpx;
+}
+.drug-attention-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20rpx 0;
+}
+.drug-attention-content {
+  font-size: 28rpx;
+  color: #626262;
+  line-height: 48rpx;
+  padding-left: 20rpx;
+  overflow: hidden;
+}
+.icon-what {
+  color: #c9c9c9;
+  font-size: 34rpx;
+  padding-left: 20rpx;
+}
+.fit-text-wrap,
+.effect-text-wrap,
+.attention-text-item {
+  padding-bottom: 20rpx;
+}
+.userinfo {
+  display: ﬂex;
+  flex-direction: column;
+  align-items: center;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.usermotto {
+  margin-top: 200px;
+}
+.usual-medicine-content {
+  font-size: 30rpx;
+  line-height: 40rpx;
+  color: #999;
+}
+.modal-body {
+  font-size: 32rpx;
+  line-height: 44rpx;
+}
+.medicine-content {
+  color:#2296F3;
+}

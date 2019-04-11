@@ -1,0 +1,48 @@
+<view class="container">
+  <view class="search-nav">
+    <view class="search-nav-left">
+      <image class="search-button" src="https://static.genebox.cn/mp/medicine/search.png"/>
+      <input
+        class="search-input"
+        placeholder="“品牌+药品名称”如“同仁堂…"
+         placeholder-style="color:#CACACD"
+        confirm-type='search'
+        value="{{inputValue}}"
+        bindinput='inputBind'
+        focus="true"></input>
+        <text
+          class="iconfont icon-close"
+          bindtap="handleInputClean"></text>
+    </view>
+    <view
+      class="close-text"
+      bindtap="handleReturnHome">取消</view>
+  </view>
+  <view
+    class="search-list"
+    wx:for="{{searchList}}"
+    wx:key="{{index}}">
+    <view class="seaarch-list-item"
+      bindtap="handleOpenSearchDrug"
+      data-id="{{item.type == 0 ? item.productId : item.drugId}}"
+      data-type="{{item.type}}">
+      <view>
+        <view class="drug-name">{{item.name}}</view>
+        <view class="vender-name" wx-if="{{item.type == 0}}">{{item.manufacturer}}</view>
+      </view>
+      <view>
+        <text class="drug-category-tag" wx-if="{{item.type == 0}}">药物</text>
+        <text class="drug-ingredients-tag" wx-if="{{item.type == 1}}">成分</text>
+      </view>
+    </view>
+  </view>
+  <view
+    class="unsearch-list"
+    wx:if="{{searchList.length===0}}">
+    <image
+      class="unsearch-list-img"
+      src="https://static.genebox.cn/mp/medicine/search_bg.png"/>
+    <view class="unsearch-list-title">暂无结果</view>
+    <view class="unsearch-list-text">对不起，该药物目前未收录在我们的数据库中，或科研界对基因与该药物的关系尚未有明确的研究。我们的科学家团队正在努力地不断完善数据库。</view>
+  </view>
+</view>

@@ -1,0 +1,248 @@
+.container {
+  padding: 80rpx 40rpx 200rpx 40rpx;
+}
+.science-container {
+  position: relative;
+}
+.nav-title {
+  font-size: 52rpx;
+  font-weight: 500;
+}
+.icon-retract {
+  font-size: 24rpx;
+  color:#2296F3;
+  font-weight: 300;
+  margin-right: 10rpx;
+}
+.icon-develop {
+  font-size: 24rpx;
+  color:#2296F3;
+  font-weight: 300;
+  margin-right: 10rpx;
+}
+.icon-link {
+  font-size: 36rpx;
+  color:#2296F3;
+}
+.indication-english-title {
+  font-size: 32rpx;
+  color: #626262;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #DDDDDD;
+}
+.indication-title {
+  font-weight: 500;
+  font-size: 36rpx;
+  margin: 40rpx 0;
+}
+.indication-resultList-img {
+  width: 670rpx;
+  height: 240rpx;
+}
+.indication-resultList {
+  position: relative;
+  margin-bottom: 26rpx;
+}
+.text {
+  height: auto;
+  margin:0;
+  padding: 0;
+}
+.introduce {
+  height: auto;
+}
+.indication-resultList-text {
+  color: #fff;
+  position: absolute;
+  top: 50rpx;
+  left: 50rpx;
+}
+.resultList-text-top {
+  font-size: 32rpx;
+  line-height: 60rpx;
+}
+.resultList-text-bot {
+  margin-top: 20rpx;
+  font-size: 36rpx;
+}
+.indication-resultList-footer {
+  font-size: 28rpx;
+  color: #626262;
+  margin-top: 24rpx;
+  line-height: 48rpx;
+}
+.indication-resultList-content {
+  font-size: 32rpx;
+  color: #626262;
+  line-height: 62rpx;
+}
+.indication-title-guide {
+  font-size: 28rpx;
+  color: #626262;
+  line-height: 60rpx;
+}
+.indication-resultList-item {
+  display: inline-block;
+  font-size: 30rpx;
+  color: #fff;
+  padding: 10rpx 20rpx;
+  background-color: #85C644;
+  border-radius: 100rpx;
+  margin: 0 14rpx 16rpx 0;
+}
+.indication-disease-title {
+  font-size: 32rpx;
+  color: #626262;
+  margin-bottom: 20rpx;
+}
+.indication-disease-item {
+  display: inline-block;
+  padding: 8rpx 26rpx;
+  border: 1rpx solid #4284C5;
+  color: #4284C5;
+  border-radius: 100rpx;
+  margin: 0 14rpx 16rpx 0;
+  font-size: 28rpx;
+}
+.indication-bottom-content {
+  font-size: 28rpx;
+  color: #626262;
+  line-height: 48rpx;
+  overflow: hidden;
+}
+.indication-develop-img {
+  width: 34rpx;
+  height: 30rpx;
+}
+.indication-develop-text {
+  font-size: 26rpx;
+  color: #2296F3;
+}
+.indication-bottom-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20rpx 0;
+}
+.indication-text-wrap,
+.science-text-wrap {
+  padding-bottom: 20rpx;
+}
+.indication-bottom-effect {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.indication-science-introduce {
+  font-size: 28rpx;
+  color: #626262;
+  line-height: 48rpx;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+.table {
+  border: 1rpx solid #dadada;
+  border-right: 0;
+  border-bottom: 0;
+}
+.tr {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.th,.td {
+  border-bottom: 1rpx solid #dadada;
+  border-right: 1rpx solid #dadada;
+  text-align: center;
+  width: 100%;
+}
+.tr:nth-child(odd){
+ background-color: #E0F1FD;
+}
+.tr:nth-child(even){
+ background-color: #F7FCFF;
+}
+.priniple-dot {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background-color: #838383;
+}
+.indication-priniple {
+  margin-bottom: 60rpx;
+}
+.indication-priniple-top {
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+}
+.indication-text-title {
+  padding-left: 10rpx;
+}
+.indication-text-main {
+  padding-left: 10rpx;
+  font-size: 28rpx;
+  color: #626262;
+  line-height: 48rpx;
+}
+.indication-documentation {
+  font-size: 24rpx;
+  line-height: 44rpx;
+}
+page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-top: 40rpx;
+}
+.tablist {
+  display: flex;
+  padding:0 100rpx;
+}
+.tablist .item {
+  flex: auto;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size: 36rpx;
+  padding-bottom:50rpx;
+}
+.tablist .item.select {
+  color: #2296F3;
+}
+.tablist .item.select::after {
+  content: "";
+  height: 3rpx;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  background: #2296F3;
+  width: 100rpx;
+}
+.content{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  display: flex;
+  flex-direction: row;
+}
+.link-img {
+  width: 30rpx;
+  height: 30rpx;
+}
+.parpers-content {
+  margin-bottom: 15rpx;
+}

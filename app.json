@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/drug/index",
+    "pages/indication/index",
+    "pages/test/index",
+    "pages/guide/index",
+    "pages/select/index",
+    "pages/search/index",
+    "pages/medicines/index",
+    "pages/webView/index",
+    "pages/mobile/stepOne/index",
+    "pages/mobile/stepTwo/index",
+    "components/dialog"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 30000
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": ["wx72dfe8a127ca0474"]
+}

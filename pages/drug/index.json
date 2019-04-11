@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "用药指导",
+  "usingComponents": {
+    "dialog": "/components/dialog"
+  }
+}

@@ -1,0 +1,100 @@
+
+.container {
+  padding: 20rpx 40rpx 40rpx 40rpx;
+}
+.icon-close {
+  color: #fff;
+  font-size: 28rpx;
+  width: 36rpx;
+  height: 36rpx;
+  text-align: center;
+  line-height: 36rpx;
+  background-color: #C9C9C9;
+  border-radius: 50%;
+}
+.unsearch-list {
+  padding: 160rpx 80rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.search-button {
+  width: 36rpx;
+  height: 36rpx;
+}
+.search-close {
+  width: 36rpx;
+  height: 36rpx;
+}
+.search-input {
+  font-size: 28rpx;
+  width: 360rpx;
+}
+.search-nav-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 540rpx;
+  height: 72rpx;
+  border: 1px solid #CACACD;
+  border-radius: 29px;
+  padding: 0 16rpx;
+  box-sizing: border-box;
+}
+.search-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.close-text {
+  font-size: 36rpx;
+  color: #9B9B9B ;
+}
+.seaarch-list-item {
+  border-bottom: 2rpx solid #efeff5;
+  padding: 60rpx 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.drug-name {
+  font-size: 28rpx;
+  color: #2296F3;
+}
+.vender-name {
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+.drug-category-tag {
+  color:#FF9902;
+  font-size: 28rpx;
+  padding: 10rpx 20rpx;
+  background: #FBF1E3;
+  border-radius: 100rpx;
+}
+.drug-ingredients-tag {
+  color:#2296F3;
+  font-size: 28rpx;
+  padding: 10rpx 20rpx;
+  background: #E0F0FC;
+  border-radius: 100rpx;
+}
+.unsearch-list-img {
+  width: 200rpx;
+  height: 200rpx;
+}
+.unsearch-list-title {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin: 50rpx 0;
+}
+.unsearch-list-text {
+  font-size: 28rpx;
+  color: #4A4A4A;
+  line-height: 50rpx;
+}

@@ -1,0 +1,50 @@
+.container {
+  padding: 20rpx 40rpx 40rpx 40rpx;
+  box-sizing: border-box;
+}
+.icon-radio {
+  color: #fff;
+  border-radius: 50%;
+  background-color: #2296F3;
+  font-size: 42rpx;
+  text-align: center;
+  line-height: 42rpx;
+}
+.icon-unradio {
+  color: #9B9B9B;
+}
+.select-title {
+  font-size: 52rpx;
+  font-weight: 500;
+}
+.select-list-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 670rpx;
+  height: 166rpx;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+  border-radius: 6px;
+  padding: 34rpx 40rpx;
+  box-sizing: border-box;
+  margin-top: 60rpx;
+}
+.card-title {
+  font-size: 36rpx;
+  font-weight: 500;
+}
+.card-boxnum {
+  font-size: 28rpx;
+  color: #9B9B9B;
+  margin-top: 14rpx;
+}
+.common-btn {
+	margin-top: 100rpx;
+  font-size: 28rpx;
+  padding: 4rpx 0;
+  color: #fff;
+  width: 250rpx;
+  background-color: #70aef9;
+  border-radius: 60rpx;
+}

@@ -1,0 +1,177 @@
+<view class="container" wx:if="{{drugList}}" >
+  <view class="nav-title">{{drugList.drugName}}</view>
+  <view class="drug-classify">
+    <view
+      class="drug-classify-candy classify" wx:if="{{drugList.categoryName}}">{{drugList.categoryName}}</view>
+    <view class="drug-classify-recipe classify" wx:if="{{drugList.otc===0}}">非处方药</view>
+    <view class="drug-classify-recipe classify" wx:if="{{drugList.otc===1}}">处方药</view>
+  </view>
+  <view class="drug-vender">生产厂商</view>
+  <view class="drug-tragacanth">{{drugList.drugManufacturer}}</view>
+  <view class="drug-component">药物成分</view>
+  <view class="drug-component-box">
+    <view class="{{item.isClick==1?'component-left':'component-left-two'}}"
+      wx:for="{{drugList.drugIngredient}}"
+      data-type="item"
+      wx:key="{{index}}"
+      bindtap="handleOpenIndication"
+      data-id="{{item.ingredientId}}"
+      data-click="{{item.isClick}}">{{item.indicationName}}</view>
+  </view>
+  <view
+    wx:if="{{drugList.geneInformation}}"
+    class="drug-title">检测结果</view>
+    <image
+      class="unclick-img"
+      wx:for="{{drugList.geneInformation}}"
+      wx:for-item="unclick"
+      wx:key="{{index}}"
+      src="{{unclick.imgUrl}}"
+      wx:if="{{unclick.productId}}"
+      bindtap="hanldeUnclickBuy"
+      data-productId="{{unclick.productId}}"/>
+  <view
+    class="drug-gene-main"
+    wx:for="{{drugList.geneInformation}}"
+    wx:for-item="itemGene"
+    wx:key="{{index}}"
+    bindtap="handleOpenindication"
+    data-ingredientId="{{itemGene.ingredientId}}"
+    wx:if="{{!itemGene.productId}}">
+    <image class="drug-gene-img" src="{{itemGene.imgUrl}}"></image>
+    <view class="drug-gene-text">
+      <view>{{itemGene.indicationName}}</view>
+      <view class="drug-text-center">{{itemGene.drugLevel}}</view>
+      <view class="drug-gene-bot">
+        <view>{{itemGene.drugAdvice}}</view>
+       <image class="drug-enter-img" src="https://static.genebox.cn/mp/medicine/enter.png"/> 
+      </view>
+    </view>
+  </view>
+  <view class="drug-title">用药指导</view>
+  <view class="drug-guide-main"
+    wx:for="{{drugList.drugGuide}}"
+    wx:for-item="itemGuide"
+    wx:key="{{index}}">
+    <view class="drug-guide-text">
+      <image
+        class="drug-guide-img"
+        src="{{itemGuide.imgUrl}}">
+      </image>
+      <view class="guide-title">
+        <text class="drug-guide-title">{{itemGuide.guideTitle}}</text>
+        <text class="drug-guide-level">{{itemGuide.level}}</text>
+        <text
+          bindtap="handleShowQuestionText"
+          data-text="{{itemGuide.questionText}}"
+          wx:if="{{itemGuide.questionText}}"
+          class="iconfont icon-what"></text>
+      </view>
+    </view>
+    <view class="guide-text-bot">{{itemGuide.guideContent}}</view>
+  </view>
+  <view class="drug-title">适应症</view>
+  <view class="drug-indication-tag">
+    <text
+      class="indication-tag-item"
+      wx:for="{{drugList.indication.tag}}"
+      wx:for-item="tagOne"
+      wx:key="{{index}}">{{tagOne}}</text>
+  </view>
+  <view
+    class="drug-indication-word"
+    style="height:{{fitTextHeight}}px">
+    <text class="fit-text-wrap">{{drugList.indication.text}}</text>
+    </view>
+    <view wx:if="{{showFitToggleBtn}}">
+      <view
+        class="drug-indication-img"
+        wx:if="{{showFitBtn}}"
+        data-toggle="{{showFitBtn}}"
+        bindtap="handleToggleFit">
+        <text class="iconfont icon-retract"></text>
+        <text class="indication-develop-button">收起</text>
+      </view>
+      <view
+        class="drug-indication-img"
+        wx:if="{{!showFitBtn}}"
+        data-toggle="{{showFitBtn}}"
+        bindtap="handleToggleFit">
+        <text class="iconfont icon-develop"></text>
+        <text class="indication-develop-button">展开</text>
+      </view>
+    </view>
+  <view class="drug-title">药物相互作用</view>
+  <view class="drug-indication-tag">
+    <text
+      class="indication-tag-item"
+      wx:for="{{drugList.drugInteraction.tag}}"
+      wx:for-item="tagTwo"
+      wx:key="{{index}}">{{tagTwo}}</text>
+  </view>
+  <view
+    class="drug-indication-text"
+    style="height:{{effectTextHeight}}px">
+    <text class="effect-text-wrap">{{drugList.drugInteraction.text}}</text>
+  </view>
+  <view wx:if="{{showEffectToggleBtn}}">
+    <view
+      class="drug-indication-img"
+      wx:if="{{showEffectBtn}}"
+      data-toggle="{{showEffectBtn}}"
+      bindtap="handleToggleEffect">
+      <text class="iconfont icon-retract"></text>
+      <text class="indication-develop-button">收起</text>
+    </view>
+    <view
+      class="drug-indication-img"
+      wx:if="{{!showEffectBtn}}"
+      data-toggle="{{showEffectBtn}}"
+      bindtap="handleToggleEffect">
+      <text class="iconfont icon-develop"></text>
+      <text class="indication-develop-button">展开</text>
+    </view>
+  </view>
+  <view class="drug-title">注意事项</view>
+  <view
+    class="drug-attention"
+    wx:for="{{attention}}"
+    wx:key="{{index}}">
+    <view class="drug-attention-top">
+      <view class="attention-dot-box"></view>
+      <view class="drug-attention-title">{{item.title}}</view>
+    </view>
+    <view
+      class="drug-attention-content"
+      style="height:{{item.showHeight}}px">
+      <text class="attention-text-item">{{item.content}}</text>
+    </view>
+    <view wx:if="{{item.showAttentionToggleBtn}}">
+      <view
+        class="drug-indication-img"
+        data-index="{{index}}"
+        wx:if="{{item.showToggleBtn}}"
+        data-toggle="{{item.showToggleBtn}}"
+        bindtap="hanldeToggleAttentionItem">
+        <text class="iconfont icon-retract"></text>
+        <text class="indication-develop-button">收起</text>
+      </view>
+      <view class="drug-indication-img"
+        data-index="{{index}}"
+        wx:if="{{!item.showToggleBtn}}"
+        data-toggle="{{item.showToggleBtn}}"
+        bindtap="hanldeToggleAttentionItem">
+        <text class="iconfont icon-develop"></text>
+        <text class="indication-develop-button">展开</text>
+      </view>
+    </view>
+  </view>
+</view>
+<dialog id="modal"
+  title=""
+  cancelText="确认"
+  bind:cancelEvent="_cancelEvent" >
+<view class='modal-body'>
+  <view>{{questionContent}}</view>  
+</view>
+</dialog>

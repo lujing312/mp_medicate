@@ -1,0 +1,18 @@
+{
+	"description": "",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false,
+		"autoAudits": false
+	},
+	"appid": "wx2491920afaf8c6f6",
+	"projectname": "%E7%94%A8%E8%8D%AF%E5%AE%9D",
+	"condition": {}
+}

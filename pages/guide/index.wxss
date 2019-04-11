@@ -1,0 +1,131 @@
+.container {
+  padding: 20rpx 0rpx 60rpx 0rpx;
+}
+.home-read-guide {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 90rpx;
+  border-bottom: 2rpx solid #EFEFF5;
+  padding: 0rpx 40rpx;
+}
+.main {
+  padding: 0rpx 40rpx;
+}
+.resd-guide-left {
+  font-size: 28rpx;
+}
+.home-drug-view {
+  width: 664rpx;
+  margin-top: 40rpx;
+  border-radius: 50rpx;
+  padding: 32rpx 38rpx;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.15);
+  box-sizing: border-box;
+}
+.drug-view-logo {
+  width: 40rpx;
+  height: 36rpx;
+  margin-right: 20rpx;
+}
+.icon-big {
+  font-size: 24rpx;
+  color: #C9C9C9;
+}
+.drug-view-text {
+  font-size: 32rpx;
+}
+.drug-view-title {
+  position: relative;
+}
+.drug-view-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.icon-what {
+  color: #C9C9C9;
+  font-size: 34rpx;
+  padding-left: 50rpx;
+  position: absolute;
+  right: -35rpx;
+  top: -35rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.view-main-cover {
+  font-size: 28rpx;
+  margin: 30rpx 0rpx;
+}
+.main-cover-item {
+  margin: 0 40rpx;
+}
+.view-main-cover {
+  display: flex;
+}
+.cover-blue {
+  color: #2296F3;
+  padding-right: 8rpx;
+}
+.cover-pink {
+  color:#FC616C;
+  padding-right: 8rpx;
+}
+.medicine-content {
+  font-size: 28rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.medicine-item {
+  padding: 10rpx 20rpx;
+  margin-right: 26rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+  color: #FC616C;
+  border-radius: 44rpx;
+  border: 2rpx solid #FC616C;
+  font-size: 28rpx;
+}
+.medicine-content-bot {
+  font-size: 24rpx;
+  text-align: right;
+}
+.standing-medication-title {
+  font-size: 28rpx;
+  margin: 40rpx 0;
+}
+.standing-item {
+  border: 2rpx solid #2296F3;
+  border-radius: 44rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+  color: #2296F3;
+  padding: 10rpx 20rpx;
+  margin-right: 26rpx;
+  font-size: 28rpx;
+}
+.standing-content {
+  font-size: 28rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.userinfo {
+  display: ﬂex;
+  flex-direction: column;
+  align-items: center;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.usermotto {
+  margin-top: 200px;
+}
+.usual-medicine-content {
+  font-size: 30rpx;
+  line-height: 40rpx;
+  color: #999;
+}

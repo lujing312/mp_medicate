@@ -1,0 +1,153 @@
+<!--pages/indication/index.wxml-->
+<view class='tablist'>
+  <view
+    wx:for="{{tabList}}"
+    wx:key="{{index}}"
+    class="item {{current==index?'select':''}}"
+    data-pos='{{index}}'
+    bindtap='tabItemClick'>
+    <text>{{item}}</text>
+  </view>
+</view>
+<view class="container">
+  <view class="box">
+    <view
+      class="indication-container"
+      hidden='{{current != 0}}'>
+      <view class="nav-title">{{indicationList.indicationName}}</view>
+      <view class="indication-english-title">{{indicationList.indicationNameEnglish}}</view>
+      <view class="indication-title">检测结果</view>
+      <view
+        class="indication-resultList"
+        wx:for="{{indicationList.detectionResult.resultList}}"
+        wx:for-item="result"
+        wx:key="{{index}}">
+        <image
+          class="indication-resultList-img"
+          src="{{result.imgUrl}}"></image>
+        <view class="indication-resultList-text">
+          <view class="resultList-text-top">{{result.drugLevel}}</view>
+          <view class="resultList-text-bot">{{result.drugAdvice}}</view>
+        </view>
+      </view>
+      <view class="indication-resultList-content">{{indicationList.detectionResult.content}}</view>
+      <view class="indication-resultList-footer">{{indicationList.detectionResult.footer}}</view>
+      <view class="indication-title">临床用药指导</view>
+      <view class="indication-title-guide">{{indicationList.linicalMedicationGuidance}}</view>
+      <view class="indication-title">常用药物</view>
+      <view class="indication-resultList-tag">
+        <text
+          class="indication-resultList-item"
+          bindtap="handleOpenIndicationView"
+          wx:for="{{indicationList.commonMedicine}}"
+          wx:for-item="tagItem"
+          wx:key="{{index}}"
+          data-id="{{tagItem.productId}}">{{tagItem.drugName}}</text>
+      </view>
+      <view
+        class="indication-title"
+        wx:if="{{indicationList.applicabledisease}}">适用疾病</view>
+      <view
+        class="indication-disease"
+        wx:if="{{indicationList.applicabledisease}}">
+        <view class="indication-disease-title">{{indicationList.applicabledisease.title}}</view>
+        <view class="indication-disease-tag">
+          <text class="indication-disease-item" wx:if="{{indicationList.applicabledisease.content}}">{{indicationList.applicabledisease.content}}</text>
+        </view>
+      </view>
+      <view class="indication-title">相互作用</view>
+      <view
+        class="indication-bottom-content"
+        style="height:{{indicationHeight}}px">
+        <text class="indication-text-wrap">{{indicationList.interreaction.content}}</text>
+      </view>
+      <view wx:if="{{showIndicationToggleBtn}}">
+        <view
+          class="indication-bottom-effect"
+          wx:if="{{!showIndicationBtn}}"
+          data-toggle="{{showIndicationBtn}}"
+          bindtap="handleToggleIndication">
+          <text class="iconfont icon-develop"></text>
+          <text class="indication-develop-text">展开</text>
+        </view>
+        <view
+          class="indication-bottom-effect"
+          wx:if="{{showIndicationBtn}}"
+          data-toggle="{{showIndicationBtn}}"
+          bindtap="handleToggleIndication">
+          <text class="iconfont icon-retract"></text>
+          <text class="indication-develop-text">收起</text>
+        </view>
+      </view>
+    </view>
+    <view class="science-container" hidden='{{current != 1}}'>
+      <view class="nav-title">{{indicationList.indicationName}}</view>
+      <view class="indication-english-title">{{indicationList.indicationNameEnglish}}</view>
+      <view class="indication-title">成分介绍</view>
+      <view
+        class="indication-science-introduce"
+        style="height:{{scienceHeight}}px">
+        <text class="science-text-wrap">{{indicationList.indicationContent.content}}</text>
+      </view>
+      <view wx:if="{{showSienceToggleBtn}}">
+        <view
+          class="indication-bottom-img"
+          wx:if="{{!showSienceBtn}}"
+          data-toggle="{{showSienceBtn}}"
+          bindtap="handleToggleSience">
+          <text class="iconfont icon-develop"></text>
+          <text class="indication-develop-text">展开</text>
+        </view>
+        <view
+          class="indication-bottom-img"
+          wx:if="{{showSienceBtn}}"
+          data-toggle="{{showSienceBtn}}"
+          bindtap="handleToggleSience">
+          <text class="iconfont icon-retract"></text>
+          <text class="indication-develop-text">收起</text>
+        </view>
+      </view>
+      <view class="indication-title">参考位点</view>
+      <view class="table">
+        <view class="tr">
+          <view class="th">检测位点</view>
+          <view class="th">所属基因</view>
+          <view class="th">所属染色体</view>
+          <view class="th">等位基因</view>
+        </view>
+        <view
+          class="tr"
+          wx:for="{{indicationList.rsInfo}}"
+          wx:key="{{index}}"
+          wx:for-item="table">
+          <view class="td">{{table.gene}}</view>
+          <view class="td">{{table.chromosome}}</view>
+          <view class="td">{{table.rsid}}</view>
+          <view class="td">{{table.genotype}}</view>
+        </view>
+      </view>
+      <view class="indication-title">原理</view>
+      <view
+        class="indication-priniple"
+        wx:for="{{indicationList.priniple}}"
+        wx:key="priniple"
+        wx:for-item="priniple">
+        <view class="indication-priniple-top">
+          <view class="priniple-dot"></view>
+          <view class="indication-text-title">{{priniple.title}}</view>
+        </view>
+        <view class="indication-text-main">{{priniple.content}}</view>
+      </view>
+      <view class="indication-title">参考文献</view>
+      <view
+        class="indication-documentation"
+        wx:for="{{indicationList.papers}}"
+        wx:key="{{index}}" wx:for-item="papers">
+      <view
+        bindtap="handleToReference"
+        data-url="{{papers.link}}"
+        class="parpers-content">{{papers.title}}<text class="iconfont icon-link"></text></view>
+      </view>
+    </view>
+  </view>
+</view>
